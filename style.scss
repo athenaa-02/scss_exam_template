@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
+$dark_Orange: #d87d4a;
+$dark: #101010;
+$grey: #f1f1f1;
+$light_white: #fafafa;
+$orange: #fbaf85;
+$white: #fff;
+$black: #000;
+$border_color: #2c2c2c;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
+
+@mixin align-center {
+  display: flex;
+  align-items: center;
+}
+
+header {
+  height: 90px;
+  padding: 0 24px;
+  background-color: $dark;
+  justify-content: space-between;
+  border-bottom: 1px solid $border_color;
+  @include align-center;
+
+  div.header_container {
+    @include align-center;
+    gap: 20px;
+  }
+  nav {
+    position: relative;
+  }
+
+  h1 {
+    color: $white;
+    @media screen and (min-width: 750px) {
+      order: -1;
+    }
+  }
+  ul.desktop {
+    display: none;
+    list-style: none;
+    gap: 34px;
+    
+    a{
+        color: $white;
+        text-decoration: none;
+    }
+
+    @media screen and (min-width: 750px) {
+      display: flex;
+    }
+  }
+  ul.mobile {
+    display: none;
+    position: absolute;
+    top: 18px;
+    background-color: $light_white;
+    list-style: none;
+
+    &:hover {
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: $dark;
+    }
+  }
+
+  svg.burger_svg {
+    @media screen and (min-width: 750px) {
+      display: none;
+    }
+
+    &:hover ~ ul.mobile {
+      display: block;
+    }
+  }
+}
+
+// @media screen and (max-width: 750px) {
+//   header {
+//   }
+// }

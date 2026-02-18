@@ -1,1 +1,69 @@
-/*# sourceMappingURL=style.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
+
+header {
+  height: 90px;
+  padding: 0 24px;
+  background-color: #101010;
+  justify-content: space-between;
+  border-bottom: 1px solid #2c2c2c;
+  display: flex;
+  align-items: center;
+}
+header div.header_container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+header nav {
+  position: relative;
+}
+header h1 {
+  color: #fff;
+}
+@media screen and (min-width: 750px) {
+  header h1 {
+    order: -1;
+  }
+}
+header ul.desktop {
+  display: none;
+  list-style: none;
+  gap: 34px;
+}
+header ul.desktop a {
+  color: #fff;
+  text-decoration: none;
+}
+@media screen and (min-width: 750px) {
+  header ul.desktop {
+    display: flex;
+  }
+}
+header ul.mobile {
+  display: none;
+  position: absolute;
+  top: 18px;
+  background-color: #fafafa;
+  list-style: none;
+}
+header ul.mobile:hover {
+  display: block;
+}
+header ul.mobile a {
+  text-decoration: none;
+  color: #101010;
+}
+@media screen and (min-width: 750px) {
+  header svg.burger_svg {
+    display: none;
+  }
+}
+header svg.burger_svg:hover ~ ul.mobile {
+  display: block;
+}/*# sourceMappingURL=style.css.map */
